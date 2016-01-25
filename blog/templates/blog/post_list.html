@@ -8,10 +8,12 @@
 			<h1>Alfi's Blog</h1>
 		</div>
 
+{% for post in posts %}
 		<div>
-			<p>published: Sat, Jan 23 2016, 11:23</p>
-			<h2>My first post</h2>
-			<p>Hi, there! This is my first post using Django framework. Thanks to python. It works!</p>
+			<p>published: {{ post.published_date }}</p>
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.text|linebreaks }}</p>
 		</div>
+{% endfor %}
 	</body>
 </html>
